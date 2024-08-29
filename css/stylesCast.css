@@ -1,0 +1,45 @@
+.footer-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+ }
+ .footer-image img {
+    width: 100px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+ }
+ #mySidepanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgb(16, 70, 11);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+ }
+ #mySidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+ }
+ #mySidepanel a:hover {
+    color: #f1f1f1;
+ }
+ #mySidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+ }
+ .sidepanel .footer-image {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+ }

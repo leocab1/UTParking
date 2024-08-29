@@ -1,0 +1,225 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: white;
+}
+
+.container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: white;
+    position: relative;
+}
+
+.profile-image {
+    width: 150px; 
+    height: 150px; 
+    border: 2px solid #ccc; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    margin: 0 auto 20px auto; 
+}
+
+.profile-image img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.form-group {
+    margin-bottom: 15px; 
+    position: relative; 
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    display: block;
+    width: calc(100% - 16px); 
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.form-group .error-message {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 20px;
+    color: red;
+    visibility: hidden;
+    margin-top: 5px;
+}
+
+.form-group .error-message.visible {
+    visibility: visible;
+}
+
+.form-group .vehicle-type {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-group .vehicle-type button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 0;
+    outline: none;
+}
+
+.form-group .vehicle-type button.selected img {
+    border-color: rgb(16, 70, 11);
+}
+
+.form-group .vehicle-type img {
+    width: 50px; 
+    margin: 0 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 50%; 
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(16, 70, 11);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.1cm;
+}
+
+.form-group button:hover {
+    background-color: rgb(16, 70, 11);
+}
+
+.radio-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radio-inputs > * {
+    margin: 12px;
+}
+
+.radio-input:checked + .radio-tile {
+    border-color: rgb(16, 70, 11);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: rgb(16, 70, 11);
+}
+
+.radio-input:checked + .radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+    background-color: rgb(16, 70, 11);
+    border-color: rgb(16, 70, 11);
+}
+
+.radio-input:checked + .radio-tile .radio-icon svg {
+    fill: rgb(16, 70, 11);
+}
+
+.radio-input:checked + .radio-tile .radio-label {
+    color: rgb(16, 70, 11);
+}
+
+.radio-input:focus + .radio-tile {
+    border-color: rgb(16, 70, 11);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-input:focus + .radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    min-height: 80px;
+    border-radius: 0.5rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.15s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-tile:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 0.25rem;
+    left: 0.25rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.25s ease;
+}
+
+.radio-tile:hover {
+    border-color: rgb(16, 70, 11);
+}
+
+.radio-tile:hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-icon svg {
+    width: 5rem;
+    height: 5rem;
+    fill: #494949;
+}
+
+.radio-label {
+    color: #707070;
+    transition: 0.375s ease;
+    text-align: center;
+    font-size: 13px;
+}
+
+.radio-input {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
