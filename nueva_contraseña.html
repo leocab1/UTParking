@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contraseña.css">
+    <link rel="icon" href="img/utpicon.png">
+    <title>Restablecer Contraseña</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="form-container">
+            <form class="form_main" action="actualizar_contraseña.php" method="POST">
+                <h2 class="heading">Nueva Contraseña</h2>
+                <input type="hidden" name="token" id="token" value="">
+                <div class="inputContainer">
+                    <input type="password" name="new_password" placeholder="Nueva Contraseña" class="inputField" required>
+                </div>
+                <button id="button" type="submit">Actualizar Contraseña</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Este script JavaScript obtiene el token de la URL y lo establece en el campo oculto del formulario.
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        if (token) {
+            document.getElementById('token').value = token;
+        } else {
+            alert('Token inválido.');
+            // Redirigir o manejar el caso de token inválido según sea necesario
+        }
+    </script>
+</body>
+</html>

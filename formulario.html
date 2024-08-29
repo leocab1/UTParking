@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="icon" href="img/utpicon.png">
+    <title>Registro Utparking</title>
+</head>
+
+<body>
+    <div class="loader_bg">
+        <div class="loader"><img src="img/loading.gif" width="150" /></div>
+     </div>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="registroForm" action="Conexion/procesar_registro.php" method="post">
+                <img src="img/uwu.jpeg" alt="Login" width="450" class="login-image">
+                <h1>Crear Usuario</h1>
+                <input type="email" name="correo" placeholder="Correo electrónico">
+                <input type="password" name="contrasena" placeholder="Contraseña">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="termsCheckbox" name="termsCheckbox">
+                    <div class="checkmark"></div>
+                    <span id="terms-conditions-link">Acepto los términos y condiciones</span>
+                </label>
+                <button type="submit" name="submit">Crear Cuenta</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form action="Conexion/procesar_login.php" method="post">
+                <img src="img/uwu.jpeg" alt="Login" width="450" class="login-image">
+                <h1>Iniciar Sesión</h1>
+                <input type="email" name="correo" placeholder="Correo electrónico">
+                <input type="password" name="contrasena" placeholder="Contraseña">
+                <a href="restcont.html">¿Olvidaste tu contraseña?</a>
+                <button type="submit" name="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>¡Hola, Castor!</h1>
+                    <p>Regístrese con sus datos personales para utilizar todas las funciones del sitio.</p>
+                    <button class="hidden" id="login">Iniciar Sesión</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>¡Hola, Castor!</h1>
+                    <p>Inicia sesión con tus datos personales para acceder a todas las funciones del sitio.</p>
+                    <button class="submit" id="register">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="termsModal">
+        <div class="modal-container">
+            <div class="modal-container-header">
+                <div class="modal-container-title">
+                    <div class="close-icon" id="closeModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7a1 1 0 0 0-1.4 1.4L10.6 12l-4.9 4.9a1 1 0 1 0 1.4 1.4L12 13.4l4.9 4.9a1 1 0 0 0 1.4-1.4L13.4 12l4.9-4.9a1 1 0 0 0 0-1.4z"/>
+                        </svg>
+                    </div>                                        
+                    <h2>Términos y Condiciones</h2>
+                </div>
+            </div>
+            <div class="modal-container-body">
+                <p>Al utilizar el servicio de estacionamiento universitario proporcionado por la Universidad Tecnológica de Puebla (UTP), aceptas los siguientes términos y condiciones:</p>
+                <ol>
+                    <li><span>Uso del Servicio:</span> Los usuarios tienen acceso al estacionamiento con el fin exclusivo de estacionar vehículos autorizados.</li>
+                    <br>
+                    <li><span>Reglas de Estacionamiento:</span> Los usuarios deben respetar las áreas designadas, límites de velocidad y cualquier otra regulación establecida por la UTP.</li>
+                    <br>
+                    <li><span>Responsabilidades del Usuario:</span> Es responsabilidad del usuario pagar las tarifas aplicables, asegurar adecuadamente sus vehículos y cumplir con todas las normativas de seguridad.</li>
+                    <br>
+                    <li><span>Privacidad:</span> La información personal recopilada se utiliza conforme a nuestra política de privacidad, protegiendo los datos según las leyes aplicables.</li>
+                    <br>
+                    <li><span>Limitaciones de Responsabilidad:</span> La UTP no se hace responsable por daños, pérdidas o robos de vehículos estacionados dentro de sus instalaciones.</li>
+                </ol>
+            </div>
+            <div class="modal-container-footer">
+                <button class="is-ghost" id="acceptTerms">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="js/formulario.js"></script>
+</body>
+</html>
