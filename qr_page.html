@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código QR</title>
+   
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        #qrcode {
+            margin: 20px;
+        }
+        button {
+            background-color: #10460b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0c3a0b;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Guarda este QR</h1>
+    <div id="qrcode"></div>
+    <div class="footer-image">
+        <button onclick="window.location.href='home.html'">Volver al Home</button>
+    </div>
+
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const data = JSON.parse(decodeURIComponent(urlParams.get('data')));
+        console.log(data);
+
+
+        const contenido = `Placa-${data.placa},\n Marca-${data.marca},\n Modelo-${data.modelo},\n Tipo-${data.tipo},\n Tipo Usuario-${data.tipo_usuario}`;
+
+        const qrCode = new QRCode(document.getElementById("qrcode"), {
+            text: contenido,
+            width: 256,
+            height: 256,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+
+        document.getElementById("convert").addEventListener("click", () => {
+            const canvas = document.querySelector("canvas");
+            if (canvas) {
+                const base64 = canvas.toDataURL("image/png");
+                document.getElementById("base64Output").textContent = base64;
+            } else {
+                console.log("El canvas no está disponible.");
+            }
+        });
+    </script>
+</body>
+</html>
